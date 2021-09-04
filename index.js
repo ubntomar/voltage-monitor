@@ -7,7 +7,7 @@ const port = 3000
 <<<<<<< HEAD
 //Comment
 //
-//comment from aws server! this is aded from laptop
+//comment from aws server! this is aded from server
 =======
 >>>>>>> 0e79056037da6ae7aee33098bc77982a643411b5
 
