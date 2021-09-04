@@ -1,7 +1,7 @@
 const express = require('express')
 const {
     getMessure
-} = require('./ut.js');
+} = require('./controlers/ut.js');
 const app = express()
 const port = 3000
 //comment from aws server! this is aded from server
