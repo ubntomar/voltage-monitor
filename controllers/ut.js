@@ -1,6 +1,7 @@
 const axios = require("axios")
 axios.defaults.timeout = 6000;
 const getMessure = async () => {
+
     console.log("start..axios.")
     try {
         const response = await axios.get('http://181.60.60.57:8282/50');
@@ -13,6 +14,5 @@ const getMessure = async () => {
     }
     return res
 }
-module.exports = {
-    getMessure
-}
+
+

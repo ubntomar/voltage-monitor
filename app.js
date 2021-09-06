@@ -1,21 +1,15 @@
 const express = require('express')
-const {
-    getMessure
-} = require('./controlers/ut.js');
 const app = express()
-const port = 3000
-//comment from aws server! this is aded from server
+var routes=require("./routes/routes")
 
-app.get('/', (req, res) => {
-    getMessure().then((result) => {
-        if (result)
-            res.send(JSON.stringify(result.data))
-        else res.send('Tenemos problemas, no responde la conexion a la tarjeta en el cerro')
-    })
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
 
+app.use('/api', routes);
 
-})
-
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-})
+module.exports = app;
